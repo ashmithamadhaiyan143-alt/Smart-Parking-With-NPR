@@ -1,0 +1,25 @@
+body {
+    margin: 0;
+    font-family: Arial;
+    background: linear-gradient(45deg,#1e3c72,#2a5298);
+    color: white;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 200px;
+    height: 100vh;
+    position: fixed;
+    background: #111;
+    padding-top: 20px;
+}
+
+.sidebar button {
+    width: 90%;
+    margin: 10px;
+    padding: 10px;
+    border: none;
+    background: #ff7e5f;
+    color: white;
+    border-radius: 8px;
+}

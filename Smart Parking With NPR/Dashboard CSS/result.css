@@ -1,0 +1,66 @@
+body {
+    background: linear-gradient(45deg,#43cea2,#185a9d);
+    color: white;
+    font-family: Arial;
+}
+
+/* GRID */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(7, 80px);
+    gap: 15px;
+    padding: 20px;
+}
+
+.slot {
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+/* COLORS */
+.available {
+    background: green;
+}
+
+.booked {
+    background: red;
+}
+
+/* TABLE */
+table {
+    width: 80%;
+    margin: auto;
+    background: white;
+    color: black;
+    border-collapse: collapse;
+}
+
+th {
+    background: #333;
+    color: white;
+    padding: 10px;
+}
+
+td {
+    padding: 10px;
+    text-align: center;
+}
+
+/* BUTTONS */
+.exit-btn {
+    background: orange;
+    border: none;
+    padding: 5px 10px;
+    color: white;
+}
+
+.delete-btn {
+    background: red;
+    border: none;
+    padding: 5px 10px;
+    color: white;
+}

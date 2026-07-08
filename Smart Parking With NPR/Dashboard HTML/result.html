@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Parking Grid</title>
+    <link rel="stylesheet" href="/static/result.css">
+</head>
+
+<body>
+
+<h2>Total Slots: {{ total_slots }}</h2>
+
+<!-- GRID -->
+<div class="grid">
+{% for i in range(1, total_slots+1) %}
+    {% if i in booked_slots %}
+        <div class="slot booked">S{{ i }}</div>
+    {% else %}
+        <div class="slot available">S{{ i }}</div>
+    {% endif %}
+{% endfor %}
+</div>
+
+<br><br>
+
+<!-- TABLE -->
+<table>
+<tr>
+<th>Vehicle</th>
+<th>Slot</th>
+<th>Entry</th>
+<th>Exit</th>
+<th>Status</th>
+<th>Exit</th>
+<th>Delete</th>
+</tr>
+
+{% for r in records %}
+<tr>
+<td>{{ r[1] }}</td>
+<td>{{ r[2] }}</td>
+<td>{{ r[3] }}</td>
+<td>{{ r[4] }}</td>
+<td>{{ r[5] }}</td>
+
+<td>
+{% if r[5] == "Booked" %}
+    <a href="/exit/{{ r[1] }}">
+        <button class="exit-btn">Exit</button>
+    </a>
+{% else %}
+    Done
+{% endif %}
+</td>
+
+<td>
+<form action="/delete/{{ r[0] }}" method="GET"
+      onsubmit="return confirm('Delete this record?')">
+    <button class="delete-btn">Delete</button>
+</form>
+</td>
+
+</tr>
+{% endfor %}
+</table>
+
+</body>
+</html>
